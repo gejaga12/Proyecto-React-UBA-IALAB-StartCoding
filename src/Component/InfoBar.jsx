@@ -7,13 +7,13 @@ const InfoBarComponent = ({ carrito, handleKeyUp, children }) => {
         <input
           type="text"
           onInput={handleKeyUp}
-          placeholder="Buscar por nomber"
+          placeholder="Buscar por nombre"
         />
       </div>
 
       <br />
 
-      <Link to={"/"}> Ir a la home </Link>
+      <Link to={"/"}>Ir a la home</Link>
 
       <br />
 

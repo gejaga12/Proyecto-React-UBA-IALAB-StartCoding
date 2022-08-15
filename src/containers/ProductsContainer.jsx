@@ -7,7 +7,7 @@ import { EcommerceContext } from "../context/EcommerceContext";
 const ProductsContainer = () => {
   const { products, carrito, setCarrito, funcionAPI, setProducts } = useContext(EcommerceContext);
   const { busqueda } = useParams();
-  const [ setTerminoDeBusqueda ] = useState([]);
+  // const [ setTerminoDeBusqueda ] = useState([]);
 
   useEffect(() => {
     funcionAPI(busqueda);
@@ -21,6 +21,7 @@ const ProductsContainer = () => {
   };
 
   const handleKeyUp = (e) => {
+    console.log(e.target.value);
      const productsFilter = products.filter((element) => {
       if (element.title.toUpperCase().match(e.target.value.toUpperCase())) {
         return true;
@@ -28,6 +29,7 @@ const ProductsContainer = () => {
       return false;
     })
     setProducts(productsFilter);
+    console.log(productsFilter);
   };
 
   return (
